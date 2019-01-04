@@ -1,4 +1,4 @@
-package com.example.trading.chaincode;
+package com.example.chaincode;
 
 import org.hyperledger.fabric.shim.ChaincodeBase;
 import org.hyperledger.fabric.shim.ChaincodeStub;
@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class TradingChaincode extends ChaincodeBase {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BankMasterChaincode.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TradingChaincode.class);
 
     private static final Charset CHARSET = StandardCharsets.UTF_8;
 
