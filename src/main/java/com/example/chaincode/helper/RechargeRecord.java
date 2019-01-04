@@ -1,21 +1,16 @@
-package com.example.chaincode;
+package com.example.chaincode.helper;
 
 import lombok.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
-@ToString
-@Builder
+@Data
 public class RechargeRecord {
     private static final long serialVersionUID = 1L;
 
-    private String recharge_id;
+    public String recharge_id;
 
-    private String merchant_id;
+    public String merchant_id;
 
-    private String points;
+    public String points;
 
-    private String timestamp;
+    public String timestamp;
 }
