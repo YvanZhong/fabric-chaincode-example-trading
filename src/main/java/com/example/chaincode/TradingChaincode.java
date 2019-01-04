@@ -71,7 +71,7 @@ public class TradingChaincode extends ChaincodeBase {
             switch (function) {
                 case "recharge":
                     return recharge(stub, params);
-                    
+
                 case "test":
                     return newSuccessResponse("test success!");
 
