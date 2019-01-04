@@ -82,5 +82,7 @@ public class TradingChaincode extends ChaincodeBase {
         }
     }
 
-
+    public static void main(String[] args) {
+        new TradingChaincode().start(args);
+    }
 }
