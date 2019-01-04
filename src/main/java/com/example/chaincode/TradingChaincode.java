@@ -69,6 +69,9 @@ public class TradingChaincode extends ChaincodeBase {
     private Response doInvoke(ChaincodeStub stub, String function, List<String> params) throws Exception {
         try {
             switch (function) {
+                case "recharge":
+                    return recharge(stub, params);
+                    
                 case "test":
                     return newSuccessResponse("test success!");
 
