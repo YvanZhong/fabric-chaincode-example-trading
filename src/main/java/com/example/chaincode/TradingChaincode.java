@@ -106,7 +106,8 @@ public class TradingChaincode extends ChaincodeBase {
 
         stub.putStringState(key, json);
 
-        return newSuccessResponse("invoke finished successfully");
+        LOGGER.info("invoke success，json = {}", json);
+        return newSuccessResponse("recharge finished successfully");
     }
 
     private String createRechargeKey(ChaincodeStub stub, String recharge_id) {
