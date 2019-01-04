@@ -58,7 +58,7 @@ public class TradingChaincode extends ChaincodeBase {
             List<String> params = stub.getParameters();
             LOGGER.info("invoke begin, function = {}, args = {}", function, params);
             Response response = doInvoke(stub, function, params);
-            LOGGER.info("invoke success，response = [status = {}, message = {}, payload = {}]", response.getStatus().getCode(), response.getMessage(), response.getPayload() == null ? null : new String(response.getPayload(), CHARSET));
+            LOGGER.info("invoke success, response = [status = {}, message = {}, payload = {}]", response.getStatus().getCode(), response.getMessage(), response.getPayload() == null ? null : new String(response.getPayload(), CHARSET));
             return response;
         } catch (Throwable e) {
             LOGGER.error(e.getMessage(), e);
@@ -95,6 +95,7 @@ public class TradingChaincode extends ChaincodeBase {
 
         String key = createRechargeKey(stub, recharge_id);
         String value = stub.getStringState(key);
+        LOGGER.info("value = {}", value);
         if (value != null) {
             return newErrorResponse("Recharge_id repeat.");
         }
@@ -109,7 +110,7 @@ public class TradingChaincode extends ChaincodeBase {
 
         stub.putStringState(key, json);
 
-        LOGGER.info("invoke success，json = {}", json);
+        LOGGER.info("invoke success, json = {}", json);
         return newSuccessResponse("recharge finished successfully");
     }
 
