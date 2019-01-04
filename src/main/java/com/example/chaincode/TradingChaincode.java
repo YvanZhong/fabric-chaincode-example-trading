@@ -96,7 +96,7 @@ public class TradingChaincode extends ChaincodeBase {
         String key = createRechargeKey(stub, recharge_id);
         String value = stub.getStringState(key);
         LOGGER.info("value = {}", value);
-        if (value != null) {
+        if (value != null && !value.isEmpty()) {
             return newErrorResponse("Recharge_id repeat.");
         }
 
