@@ -248,8 +248,12 @@ public class TradingChaincode extends ChaincodeBase {
             }
         }
 
-        if (order_points >= refunded_points + Integer.parseInt(points) &&
-                order_cash >= refunded_cash + Integer.parseInt(cash)) {
+        LOGGER.info("order_points = {}, total_points = {}, order_cash = {}, total_cash = {}",
+                order_points, refunded_points + Integer.parseInt(points),
+                order_cash, refunded_cash + Integer.parseInt(cash));
+
+        if (order_points < refunded_points + Integer.parseInt(points) &&
+                order_cash < refunded_cash + Integer.parseInt(cash)) {
             return newErrorResponse("Points or cash overflow.");
         }
 
