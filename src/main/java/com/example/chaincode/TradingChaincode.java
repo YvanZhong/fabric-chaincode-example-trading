@@ -263,6 +263,7 @@ public class TradingChaincode extends ChaincodeBase {
         orderRefundRecord.setMerchant_id(merchant_id);
         orderRefundRecord.setUser_id(user_id);
         orderRefundRecord.setPoints(points);
+        orderRefundRecord.setCash(cash);
         orderRefundRecord.setTimestamp(timestamp);
         String json = gson.toJson(orderRefundRecord);
 
